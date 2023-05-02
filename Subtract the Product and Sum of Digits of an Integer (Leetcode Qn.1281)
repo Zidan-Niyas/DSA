@@ -1,0 +1,26 @@
+class Solution {
+public:
+    int subtractProductAndSum(int n) {
+        
+        int digit[10],len=0,sum=0,product=1;
+
+        // To take individual digits out
+        for(int i=0;i<10;i++){
+            if(n!=0){
+                digit[i]=n%10;
+                n=n/10;
+                len++;
+            }
+        }
+
+        // To find product and sum
+        for(int i=0;i<len;i++){
+            product=product*digit[i];
+            sum=sum+digit[i];
+        }
+
+        // To return difference
+        return (product-sum);
+
+    }
+};
