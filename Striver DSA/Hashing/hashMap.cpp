@@ -33,3 +33,26 @@ int main() {
 
     return 0;
 }
+
+
+/* 
+Input :-
+Enter size of array : 7
+Enter values of array : 
+1 2 3 3 2 1 12 
+
+Output :-
+1-->2
+2-->2
+3-->2
+12-->1
+Enter no. of queries : 4
+Enter no. to be checked : 1
+2
+Enter no. to be checked : 2
+2
+Enter no. to be checked : 3
+2
+Enter no. to be checked : 12
+1
+*/
