@@ -1,0 +1,43 @@
+// Problem Statement :
+//  --> find the highest and lowest frequency elements from the given array.
+//  --> If there are multiple elements with highest or lowest frequency, then choose the smallest element.
+
+vector<int> getFrequencies(vector<int>& v) { 
+    unordered_map<int,int> mpp;
+    for(int i=0; i<v.size(); i++) {
+        mpp[v[i]]++;
+    }
+    int max = INT_MIN;
+    int min = INT_MAX;
+    int highest;
+    int lowest;
+
+    // Find the max and min frequency
+    for(auto it : mpp) {
+        if(it.second > max) {
+            max = it.second;
+        }
+        if(it.second < min) {
+            min = it.second;
+        }
+    }
+
+    // Find the smallest element that has max and min freq
+    int small_l = INT_MAX;
+    int small_h = INT_MAX;
+    for(auto it : mpp) {
+        if(max == it.second && it.first < small_h) {
+            small_h = it.first;
+            highest = it.first;
+        }
+        if(min == it.second && it.first < small_l) {
+            small_l = it.first;
+            lowest = it.first;
+        }
+    } 
+    
+    vector<int> ans;
+    ans.push_back(highest);
+    ans.push_back(lowest);
+    return ans;
+}
