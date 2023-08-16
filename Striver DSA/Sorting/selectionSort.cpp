@@ -1,5 +1,5 @@
 // Selection Sort ---> Select minimum (logic)
-// Time Complexity ---> O(N) --> Best, Worst & Average Case
+// Time Complexity ---> O(N^2) --> Best, Worst & Average Case
 
 
 void swap(int i, int j, vector<int> &arr) {
