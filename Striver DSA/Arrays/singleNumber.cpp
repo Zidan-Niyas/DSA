@@ -1,6 +1,7 @@
+// Leetcode QN.136
 // Solution (CNS) : XOR of each element till the end of array will give the array that appears once
 // XOR of two same numbers is 0
-// so 5^4^5^4^1^2^2 = 1 
+// so 5^4^5^4^1^2^2 = 1   
 // 5^4^5^4 = 0
 class Solution {
 public:
