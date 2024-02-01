@@ -52,10 +52,29 @@ public:
     }
 };
 
-//------------ BEST APPROACH (Dutch National Flag Algorithm) -----------------//
-// Dutch National Flag Algorithm - 3 
+//------------ BEST APPROACH (Dutch National Flag Algorithm - 3 pointer approach) -----------------//
+// TC = O(N) , SC = O(1)
 // [0 ... low-1] --> 0 (extreme left)
 // [low .... mid-1] --> 1
 // [mid .... high] --> the array to be sorted
 // [high+1 .... n-1] --> 2 (extreme right)
-
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+        int l = 0, m = 0, h = nums.size() - 1;
+        while(m <= h) {
+            if(nums[m] == 0) {
+                swap(nums[l], nums[m]);
+                m++;
+                l++;
+            }
+            else if(nums[m] == 1) {
+                m++;
+            }
+            else if(nums[m] == 2) {
+                swap(nums[m], nums[h]);
+                h = h - 1;
+            }
+        }
+    }
+};
