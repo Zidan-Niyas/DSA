@@ -1,4 +1,5 @@
 //------------------ Brute Force (solved in 6 mins) ---------------//
+// TC : O(N^2)
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
@@ -17,6 +18,7 @@ public:
 };
 
 //---------------- Optimized (two pass Hash Table) ---------------------//
+// TC : O(N) , SC : O(N)
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
@@ -34,6 +36,7 @@ public:
 };
 
 //--------------- Optimized (one pas Hash Table) --------------------//
+// TC : O(N) , SC : O(N)
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
