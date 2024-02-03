@@ -32,8 +32,8 @@ int longestSubarrayWithSumK(vector<int> a, long long k) {
         }
         // if k=3 & arr = [2,0,0,0,3] ---> max subarray should be [0,0,0,3] whose maxLen = 4 , if the below condition
         // is not used the max subarray will be [3] making maxLen = 1 which is wrong.
-        if(preMap.find(sum) == preMap.end()) {     // incase zeros are present in the array, this if condition is used to check
-            preMap[sum] = i;                       // if the sum is already present in the hashmap
+        if(preMap.find(sum) == preMap.end()) {     // Check if the key 'sum' is not present in the map 'preMap'
+            preMap[sum] = i;                       // If not present, add a new key-value pair to the map where the key is 'sum' and the value is 'i'
         }
     }
     return maxLen;
