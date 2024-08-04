@@ -1,4 +1,4 @@
-bool searchKey(int n, struct Node* head, int key) {
+bool searchKey(struct Node* head, int key) {
         Node* temp = head;
         while(temp) {
             if(temp->data == key) {
