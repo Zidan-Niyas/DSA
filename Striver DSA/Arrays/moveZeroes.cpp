@@ -1,24 +1,17 @@
-// ------------My Approach(solved in 5 mins)--------------- //
 class Solution {
 public:
     void moveZeroes(vector<int>& nums) {
-        int zeros=0,j=0;
-        int newArr[100000];
-        for(int i=0; i<nums.size(); i++) {
-            if(nums[i] == 0) {
-                zeros++;
-            }
-            else {
-                newArr[j] = nums[i];
-                j++;
+        int n = nums.size();
+        int k = 0;
+        for(int i=0; i<n; i++) {
+            if(nums[i] != 0) {
+                nums[k++] = nums[i];
             }
         }
-        for(int i=1; i<=zeros; i++) {
-            newArr[j++] = 0;
+        int remaining = n-k;
+        while(remaining > 0) {
+            nums[k++] = 0;
+            remaining--;
         }
-        for(int i=0; i<nums.size(); i++) {
-            nums[i] = newArr[i];
-        }
-
     }
 };
