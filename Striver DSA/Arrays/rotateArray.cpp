@@ -1,22 +1,22 @@
-// ---------Efficient Approach(review)------------- //
+// --------- Passes (37/38) cases ------------- //
 class Solution {
 public:
     void rotate(vector<int>& nums, int k) {
-        // nums = [1 2 3 4 5 6 7] , n=7 , k=3
-        k=k%nums.size();
-        // Reverse values from 0 --> n-k  = [4 3 2 1 | 5 6 7]
-        reverse(nums.begin(),nums.begin()+(nums.size()-k));
-
-        // Reverse values from n-k --> end  = [4 3 2 1 | 7 6 5]
-        reverse(nums.begin()+(nums.size()-k),nums.end());
-
-        // Reverse whole array  = [5 6 7 | 1 2 3 4]
-        reverse(nums.begin(),nums.end());
+        int n = nums.size();
+        while(k > 0) {
+            int rotate = nums[n - 1];
+            for(int i=n-1; i>0; i--) {
+                nums[i] = nums[i - 1];
+            }
+            nums[0] = rotate;
+            k--;
+        }
+        
     }
 };
 
 
-// ----------My Approach (passes 28/38 cases) ------------ //
+// ----------passes 28/38 cases (approach given in the comments) ------------ //
 class Solution {
 public:
     void rotate(vector<int>& nums, int k) {
