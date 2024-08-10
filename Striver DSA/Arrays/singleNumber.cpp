@@ -1,8 +1,8 @@
-// Leetcode QN.136
-// Solution (CNS) : XOR of each element till the end of array will give the array that appears once
 // XOR of two same numbers is 0
 // so 5^4^5^4^1^2^2 = 1   
 // 5^4^5^4 = 0
+
+//------- XOR solution (beats 96.12% solutions) --------------//
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
@@ -16,29 +16,22 @@ public:
 };
 
 
-//------Frequency Approach(unordered_map)-----------------//
+//------ Hashmap (beats 52.54% solutions) -----------------//
 class Solution {
 public:
-    int singleNumber(vector<int>& arr) {
-        int n = arr.size(); // taking the size of the array 
-        
-        unordered_map<int, int> mp; // unordered map to store the frequency
-        
-        // storing frequency in the map
-        for(int i = 0; i < n; i++)
-        {
-            mp[arr[i]]++;
+    int singleNumber(vector<int>& nums) {
+        int n = nums.size();
+        int ans;
+        unordered_map<int,int> elements;
+        for(int i=0; i<n; i++) {
+            elements[nums[i]]++;
         }
-        
-        int ans; // variable to store our answer
-        for(auto x: mp) // traverse from the map
-        {
-            if(x.second == 1) //if frequency of any elemennt is 1
-            {
-                ans = x.first; // store in our answer
-                break; // break the loop, as we got our answer now
+        for(auto it : elements) {
+            if(it.second == 1) {
+                ans = it.first;
+                break;
             }
         }
-        return ans; // return ans
+        return ans;
     }
 };
