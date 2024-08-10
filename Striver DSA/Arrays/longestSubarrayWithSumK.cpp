@@ -17,6 +17,7 @@ int longestSubarrayWithSumK(vector<int> a, long long k) {
 }
 
 //-------------- HashMap Approach --------------------//
+// TC = O(N)
 #include<bits/stdc++.h>
 int longestSubarrayWithSumK(vector<int> a, long long k) {
     int n = a.size(), maxLen = 0;
